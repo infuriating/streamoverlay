@@ -12,9 +12,6 @@ function randomize() {
   let randomColor1 = "#" + Math.floor(Math.random() * 16777215).toString(16),
     randomColor2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
 
-  console.log(randomColor1);
-  console.log(randomColor2);
-
   for (let i = 0; i < svg_color1.length; i++) {
     svg_color1[i].setAttribute("fill", randomColor1);
   }
