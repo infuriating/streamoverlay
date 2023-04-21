@@ -32,9 +32,24 @@
               result="effect1_foregroundBlur"
             ></feGaussianBlur>
           </filter>
+          <filter id="turbulence1" x="-10%" y="-10%" width="120%" height="120%">
+            <feTurbulence
+              baseFrequency="1.1"
+              numOctaves="5"
+              seed="1000"
+              type="fractalNoise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="turbulence"
+              scale="100"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            ></feDisplacementMap>
+          </filter>
         </defs>
         <rect width="1920" height="1080" fill="#001220"></rect>
-        <g filter="url(#blur1)">
+        <g filter="url(#blur1) url(#turbulence1)">
           <circle
             cx="1617"
             cy="106"
