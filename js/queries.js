@@ -3,14 +3,21 @@ const urlparams = new URLSearchParams(window.location.search),
   logo = urlparams.get("logo"),
   spotify = urlparams.get("spotify");
 
+let logoURL = logo;
+
 // elements
-let arcadia_logo = document.querySelector("#arcadia_logo"),
+let logoDiv = document.querySelector("#logo"),
+  logoElem = document.querySelector("#logo_image"),
   spotifyDisplay = document.querySelector("#spotify");
 
-if (logo == "true") {
-  arcadia_logo.style.display = "flex";
+if (!logo) {
+  logoElem.style.display = "none";
+} else if (logo == "arcadia") {
+  logoElem.style.display = "flex";
+  logoElem.setAttribute("src", "media/arcadia_spin.gif");
 } else {
-  arcadia_logo.style.display = "none";
+  logoElem.style.display = "flex";
+  logoElem.setAttribute("src", logoURL);
 }
 
 if (spotify == "true") {
